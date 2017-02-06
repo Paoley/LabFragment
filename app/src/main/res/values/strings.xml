@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">My Application fRagment7</string>
+    <string name="button_caption">Find Information</string>
+
+    <string-array name="origin">
+        <item>BC</item>
+        <item>AB</item>
+        <item>SK</item>
+        <item>MB</item>
+        <item>ON</item>
+        <item>QB</item>
+    </string-array>
+
+    <string-array name="destination">
+        <item>BC</item>
+        <item>AB</item>
+        <item>SK</item>
+        <item>MB</item>
+        <item>ON</item>
+        <item>QB</item>
+    </string-array>
+
+</resources>
