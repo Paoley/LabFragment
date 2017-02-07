@@ -5,6 +5,7 @@ import android.app.LoaderManager;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.widget.SimpleCursorAdapter;
 
 /**
@@ -19,7 +20,6 @@ public class ListViewLoader extends ListActivity
     //want to retrive from resoursces
     static final String[] PROJECTION = new String[] {ContactsContract.Data._ID,
             ContactsContract.Data.DISPLAY_NAME};
-    static
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         return null;

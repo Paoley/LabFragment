@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * Created by pabloulloa on 2017-02-04.
@@ -23,7 +26,7 @@ public class TopFragment extends Fragment {
     // what is an interface
     public interface InformationSearcher
     {
-        public void searchForFlights(String orign);
+        public void searchForOrigin(String orign);
     }
 
     @Override
@@ -44,17 +47,19 @@ public class TopFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Button findInformation = (Button) getActivity().findViewById(R.id.find);
-        findInformation.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v ) {
-                Spinner orginSpinner =  (Spinner) getActivity().findViewById(R.id.orign);
-
-                interfaceImplemetor.searchForFlights(orginSpinner.getSelectedItem().toString());
+        ListView findInformation = (ListView) getActivity().findViewById(R.id.origin);
 
 
+        findInformation.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                //ListView orginList =  (ListView) getActivity().findViewById(R.id.origin);
+                interfaceImplemetor.searchForOrigin(parent.getItemAtPosition(position).toString());
+                // When clicked, show a toast with the TextView text
+                Toast.makeText(getActivity().getApplicationContext(),
+                        "hello", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }

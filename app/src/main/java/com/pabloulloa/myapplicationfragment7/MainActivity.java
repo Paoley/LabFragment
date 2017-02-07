@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements TopFragment.Infor
 
     // what to do in case interface communicate
     @Override
-    public void searchForFlights(String orign) {
+    public void  searchForOrigin(String orign) {
         BottomFragment bottomFragment = (BottomFragment) getFragmentManager().findFragmentById(R.id.bottomFragment);
         String result = "About "+ orign  ;
         bottomFragment.displayInformation(result);

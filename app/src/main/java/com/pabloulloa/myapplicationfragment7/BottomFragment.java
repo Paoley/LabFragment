@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.TextView;
+import android.webkit.WebView;
+
 
 /**
  * Created by pabloulloa on 2017-02-04.
@@ -30,7 +32,15 @@ public class BottomFragment extends Fragment {
     //finds and set the result in textEdir
     public void displayInformation(String result )
     {
-        EditText resultField = (EditText) getActivity().findViewById(R.id.queryResult);
-        resultField.setText(result);
+        WebView webView = (WebView) getActivity().findViewById(R.id.queryResult);
+        webView.setInitialScale(1);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+        webView.setScrollbarFadingEnabled(false);
+
+        webView.loadUrl("https://www.google.com");
+
     }
 }
